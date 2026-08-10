@@ -1,0 +1,17 @@
+{
+  "name": "superquants-local",
+  "description": "Repo-local marketplace for the Superquants quant research skill suite.",
+  "owner": {
+    "name": "nnquant",
+    "email": "nnquant@foxmail.com"
+  },
+  "plugins": [
+    {
+      "name": "superquants",
+      "description": "Eight connected skills for closed-loop quant research: triage, brainstorms, data prep, experiment planning, debugging, robustness review, productionization, and live review.",
+      "source": "./plugins/superquants",
+      "version": "0.2.0",
+      "category": "productivity"
+    }
+  ]
+}

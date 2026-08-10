@@ -1,0 +1,20 @@
+{
+  "name": "superquants-local",
+  "interface": {
+    "displayName": "Local Plugins"
+  },
+  "plugins": [
+    {
+      "name": "superquants",
+      "source": {
+        "source": "local",
+        "path": "./plugins/superquants"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

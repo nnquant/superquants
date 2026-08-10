@@ -1,0 +1,9 @@
+{
+  "name": "superquants",
+  "description": "Superquants multi-skill suite for closed-loop quant research workflows.",
+  "version": "0.2.0",
+  "author": {
+    "name": "nnquant",
+    "email": "nnquant@foxmail.com"
+  }
+}
