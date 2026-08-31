@@ -1,27 +1,27 @@
 ---
 name: superquants-experiment-planning
-description: use after an approved quantitative research spec and trustworthy data audit exist. breaks strategy implementation into bite-sized experiments with exact files, tests, baselines, predictions, and experiment logs; asks targeted questions before execution and blocks large backtests or broad parameter sweeps until the design passes a statistical power check and the smallest verifiable slice is planned.
+description: use after an approved quantitative research brief or spec and trustworthy data audit exist. breaks strategy implementation into bite-sized experiments with exact files, tests, baselines, predictions, and experiment logs; asks only decision-changing questions before execution and blocks large backtests or broad parameter sweeps until the design passes a statistical power check and the smallest verifiable slice is planned.
 ---
 
 # Superquants Experiment Planning
 
 Use this skill once the research question and data assumptions are stable enough to plan implementation. At the start of a qualifying task, say you are using the Superquants Experiment Planning skill.
 
-Read the approved research spec and data audit before proposing code, notebooks, experiments, or backtests. If the research packet is incomplete, ask one question per message until the missing assumptions are resolved.
+Read the approved research brief or spec and data audit before proposing code, notebooks, experiments, or backtests. If the research packet is incomplete, ask only decision-changing questions. Use the environment's native structured-question tool when available and group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker that cannot be safely inferred. Do not conduct a serial survey.
 
 Do not jump to a full-history backtest, giant parameter sweep, or production build. Start with the smallest vertical slice that can falsify the idea.
 
 ## Checklist
 
 1. Read the current research packet.
-   - research spec
+   - research brief or spec
    - data audit
    - existing code or notebooks
    - prior experiment logs and plots
 2. Restate the current objective in one sentence.
    - What decision should the next experiment change?
-3. Ask clarifying questions one at a time.
-   - Resolve missing details around baselines, benchmarks, costs, lagging, and operational constraints.
+3. Resolve material blockers in a compact question round.
+   - Group only the missing details that can change baselines, benchmarks, costs, lagging, or operational constraints.
 4. Design the experiment ladder.
    - experiment zero: power and falsifiability check - can this design distinguish the claimed effect from noise at all?
    - baseline or null comparison
@@ -46,6 +46,7 @@ Do not jump to a full-history backtest, giant parameter sweep, or production bui
    - Use `scripts/validate_experiment_plan.py` and `scripts/validate_experiment_log.py` when available.
 9. Transition.
    - Execute the plan only after it is concrete enough that another agent could follow it without guessing.
+   - When presenting completed results, use superquants-result-reporting to select the smallest useful set of report modules; do not generate every available chart by default.
    - If results later look suspicious or inconsistent, move to superquants-strategy-debugging.
 
 ## Planning Rules
@@ -56,7 +57,7 @@ Do not jump to a full-history backtest, giant parameter sweep, or production bui
 - Document the baseline that each experiment must beat.
 - Treat cost assumptions as part of the experiment definition, not an afterthought.
 - State stop conditions up front so the user knows when to promote, iterate, or archive.
-- Metrics are frozen in the spec before the first backtest; a metric added after seeing results is exploratory - label it and amend the spec.
+- Metrics are frozen in the approved research design before the first backtest; a metric added after seeing results is exploratory - label it and amend the design.
 - Every variant counts toward the selection history, including the ones that will not be reported.
 
 ## Output Standard
@@ -81,6 +82,7 @@ A finished experiment log should usually contain:
 - portfolio and execution mapping
 - costs and constraints
 - results
+- selected result evidence and artifact paths appropriate to the experiment
 - interpretation
 - next step
 - reproducibility

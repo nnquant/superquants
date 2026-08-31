@@ -8,10 +8,11 @@ Included skills:
 2. `superquants-brainstorms`
 3. `superquants-data-prepare`
 4. `superquants-experiment-planning`
-5. `superquants-strategy-debugging`
-6. `superquants-robustness-review`
-7. `superquants-productionization`
-8. `superquants-live-review`
+5. `superquants-result-reporting`
+6. `superquants-strategy-debugging`
+7. `superquants-robustness-review`
+8. `superquants-productionization`
+9. `superquants-live-review`
 
 Plugin root:
 

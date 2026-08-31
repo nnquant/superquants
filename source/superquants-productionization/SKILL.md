@@ -7,20 +7,20 @@ description: use only after a quantitative strategy has passed robustness review
 
 Use this skill when the strategy is approved in principle and the work becomes operationalization. At the start of a qualifying task, say you are using the Superquants Productionization skill.
 
-Read the latest research spec, data audit, experiment plan, review memo, current codebase, and operating context before proposing architecture changes. If operational assumptions are incomplete, ask one question per message until the missing details are pinned down.
+Read the latest research design, data audit, experiment plan, review memo, current codebase, and operating context before proposing architecture changes. If operational assumptions are incomplete, ask only decision-changing questions. Use the environment's native structured-question tool when available and group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker that cannot be safely inferred. Do not conduct a serial survey.
 
 Do not move a strategy toward live use based only on research notebooks. Freeze assumptions and define operating controls first.
 
 ## Checklist
 
 1. Read the approval packet.
-   - research spec
+   - research brief or spec
    - data audit
    - latest experiment or validation logs
    - review memo with promote decision
    - codebase and existing ops tooling
-2. Ask clarifying questions one at a time.
-   - resolve trading window, data SLA, latency tolerance, risk controls, ownership, incident handling, and rollback expectations
+2. Resolve material operational blockers in a compact question round.
+   - group only unresolved trading-window, data-SLA, latency, risk-control, ownership, incident, or rollback details that change the production contract
 3. Freeze the research contract.
    - formulae
    - config

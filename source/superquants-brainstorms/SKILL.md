@@ -1,15 +1,30 @@
 ---
 name: superquants-brainstorms
-description: use before any quantitative strategy ideation, factor research, alpha thesis, or new backtest design. turns vague trading ideas into an approved research spec through one-question-at-a-time dialogue, alternative comparison, and section-by-section validation. checks the trial registry and archive for prior attempts, and commits metrics, statistical power budget, promotion criteria, and kill criteria in writing before any data prep, backtest, notebook work, or code.
+description: use when a new quantitative strategy or material research design needs its assumptions, metrics, validation, and stop criteria frozen before implementation. routes existing-result questions and timeboxed quick checks to lighter workflows, and chooses a compact research brief or full research spec according to ambiguity and consequence.
 ---
 
 # Superquants Brainstorms
 
-Help turn rough quant ideas into approved research specs.
+Help turn material quant ideas into an appropriately sized approved research design without making simple questions pay the cost of a full specification.
 
-At the start of a qualifying task, say you are using the Superquants Brainstorms skill. Then inspect any existing research artifacts, notebooks, docs, logs, or plots before asking detailed questions.
+At the start of a qualifying task, say you are using the Superquants Brainstorms skill. Then inspect any existing research artifacts, notebooks, docs, logs, or plots before asking questions.
 
-Do not invoke superquants-data-prepare, superquants-experiment-planning, write code, suggest a full backtest, or take implementation action until a written research spec has been presented and approved. This rule applies even when the idea sounds simple.
+Use the lightest mode that protects the decision:
+
+- direct answer: explain or compare existing evidence without creating a new experiment; answer from the available artifacts and do not create a spec
+- quick check: one frozen configuration, no tuning, and a drop-or-graduate decision; route to superquants-triage
+- compact design: one bounded hypothesis using familiar data and conventions, with no parameter search or live-capital decision; write a research brief
+- full design: material ambiguity, new data or model classes, multiple variants, leverage or derivatives, broad validation, or production intent; write a full research spec
+
+For compact and full designs, do not invoke superquants-data-prepare, superquants-experiment-planning, write research code, or run the backtest until the chosen design artifact has been presented and approved. Direct answers and quick checks follow their own lighter boundaries.
+
+## Questioning Policy
+
+- Infer answers from the project and prior artifacts before asking.
+- Ask only questions whose answers would materially change the claim, universe, timing, benchmark, cost model, validation, or decision threshold.
+- When the environment provides a native structured-question tool, such as `request_user_input` in Codex or `AskUserQuestion` in Claude, group up to three related questions in one round and include a recommended default when useful.
+- When that tool is unavailable, state reasonable defaults and ask only the single blocker that cannot be safely inferred. Do not conduct a serial survey.
+- A compact design normally gets at most one question round. A full design normally gets at most two unless new evidence creates a genuine blocker.
 
 ## Checklist
 
@@ -21,33 +36,33 @@ Complete these items in order:
    - If the user already has a strategy draft, reconstruct the research claim before asking new questions.
 2. Assess scope.
    - If the request actually contains multiple unrelated ideas, decompose them before refining details.
-   - Each independent strategy idea gets its own spec.
-3. Ask clarifying questions one at a time.
-   - Prefer multiple-choice questions when possible.
-   - Only one question per message.
-   - Use questions to pin down purpose, instrument set, horizon, benchmark, constraints, and success criteria.
-4. Propose 2-3 research paths.
-   - For each path, explain the mechanism, required data, likely failure modes, and implementation cost.
-   - Lead with your recommended path and explain why.
-5. Present the design in sections.
-   - After each section, ask whether it looks right so far.
-   - Cover the objective, research claim, economic mechanism, universe, timing rules, portfolio mapping, benchmarks, validation design, and kill criteria.
-6. Write the research spec.
-   - Save to `research/superquants/specs/YYYY-MM-DD-<slug>-research-spec.md` when files are available.
-   - Use `scripts/new_research_spec.py` to scaffold the file when code execution is available.
-7. Self-review the spec.
+   - Each independent strategy idea gets its own appropriately sized design artifact.
+3. Resolve material blockers in a compact question round.
+   - Follow the Questioning Policy instead of asking every question in the bank.
+   - Record discoverable or safely defaulted details as assumptions for the consolidated review.
+4. Compare research paths only when there is a genuine design choice.
+   - If one path is clearly implied by the request and current project, recommend it directly.
+   - Otherwise compare 2-3 paths by mechanism, data, failure modes, implementation cost, and fastest falsification.
+5. Present one consolidated design.
+   - Cover only the sections needed by the chosen mode.
+   - Ask for one overall review; do not require section-by-section approval unless the user requests it.
+6. Write the chosen artifact.
+   - Compact: save `research/superquants/specs/YYYY-MM-DD-<slug>-research-brief.md` and use `scripts/new_research_brief.py`.
+   - Full: save `research/superquants/specs/YYYY-MM-DD-<slug>-research-spec.md` and use `scripts/new_research_spec.py`.
+7. Self-review the artifact.
    - Remove placeholders.
    - Check for contradictions, hidden future information, missing cost assumptions, and fuzzy success criteria.
-8. Ask the user to review the written spec.
+   - Use the validator for the chosen mode when code execution is available.
+8. Ask the user to review the written artifact once.
    - Do not move to data or implementation until the user approves.
 9. Transition.
    - After approval, the next default skill is superquants-data-prepare.
    - Skip directly to superquants-experiment-planning only if the user already has a trustworthy data audit.
-   - Ideas arriving from superquants-triage keep their quick-look numbers quarantined: the spec's metrics, promotion criteria, and kill criteria are committed before any clean rerun.
+   - Ideas arriving from superquants-triage keep their quick-look numbers quarantined: the approved design commits metrics and stop criteria before any clean rerun.
 
 ## Questions To Resolve Before Approval
 
-Always resolve these topics before approving a spec:
+For a full spec, resolve the material parts of these topics before approval. For a compact brief, include only what can change the immediate experiment or its interpretation. Do not ask about items already established by the project:
 
 - What decision should the research inform?
 - What is the exact asset universe and how is it formed over time?
@@ -79,6 +94,17 @@ If the user is unsure which direction to take, explore alternatives such as:
 
 ## Output Standard
 
+A compact research brief should usually contain:
+
+- decision to inform
+- claim and mechanism
+- scope and timing
+- data and leakage guard
+- baseline and metrics
+- costs and constraints
+- fast falsification rule
+- assumptions and open questions
+
 A finished research spec should usually contain:
 
 - objective
@@ -99,9 +125,12 @@ A finished research spec should usually contain:
 ## Resources
 
 - `scripts/new_research_spec.py`: scaffold a research spec at the canonical location
+- `scripts/new_research_brief.py`: scaffold a compact research brief at the canonical location
 - `scripts/new_approach_comparison.py`: scaffold an approach comparison next to the specs
 - `scripts/validate_research_spec.py`: verify the required sections exist before sign-off
+- `scripts/validate_research_brief.py`: verify the compact brief sections exist before sign-off
 - `references/question-bank.md`: targeted questions by strategy type and research phase
 - `references/spec-patterns.md`: examples of strong vs weak research claims and kill criteria
 - `assets/templates/research-spec-template.md`: default spec structure
+- `assets/templates/research-brief-template.md`: compact design structure
 - `assets/templates/approach-comparison-template.md`: default structure for comparing 2-3 research directions

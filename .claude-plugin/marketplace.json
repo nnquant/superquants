@@ -8,9 +8,9 @@
   "plugins": [
     {
       "name": "superquants",
-      "description": "Eight connected skills for closed-loop quant research: triage, brainstorms, data prep, experiment planning, debugging, robustness review, productionization, and live review.",
+      "description": "Nine connected skills for appropriately scoped quant research, modular result reporting, robustness review, productionization, and live review.",
       "source": "./plugins/superquants",
-      "version": "0.2.0",
+      "version": "0.3.1",
       "category": "productivity"
     }
   ]

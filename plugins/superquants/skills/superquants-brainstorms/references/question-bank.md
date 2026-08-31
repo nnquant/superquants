@@ -1,6 +1,6 @@
 # Question Bank
 
-Use these questions selectively. Ask one question per message, not a whole survey.
+Use these questions selectively after inspecting the project. Ask only what would materially change the research design. When a native structured-question tool is available, group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker that cannot be safely inferred. Never turn this bank into a serial survey.
 
 ## Intent And Decision
 

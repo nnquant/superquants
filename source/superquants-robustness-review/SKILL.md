@@ -7,20 +7,20 @@ description: use when a quantitative strategy or experiment looks promising and 
 
 Use this skill once a strategy has some positive evidence and the question becomes whether it deserves more trust. At the start of a qualifying task, say you are using the Superquants Robustness Review skill.
 
-Read the research spec, data audit, experiment plan, experiment logs, plots, and current implementation before judging robustness. If the evidence packet is incomplete or ambiguous, ask one question per message until the key assumptions are explicit.
+Read the research design, data audit, experiment plan, experiment logs, selected result reports, plots, and current implementation before judging robustness. If the evidence packet is incomplete or ambiguous, ask only decision-changing questions. Use the environment's native structured-question tool when available and group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker that prevents a defensible review. Do not conduct a serial survey.
 
 Do not recommend productionization from a single pretty backtest or a loosely documented notebook. And do not score any evidence whose selection history is unknown: a result's meaning depends on how many siblings died for it.
 
 ## Checklist
 
 1. Read the evidence packet.
-   - spec, audit, plan, logs, code, tests, plots, and any previous review memos
+   - brief or spec, audit, plan, logs, selected result report, code, tests, plots, and any previous review memos
    - the trial registry entries and selection history for this strategy family
    - the current program haircut from `research/superquants/calibration-ledger.md` when it exists
 2. Restate the claim under review in one sentence.
    - what exactly is supposed to work?
-3. Ask clarifying questions one at a time.
-   - resolve cost assumptions, parameter-selection logic, selection history, benchmark choice, capacity assumptions, and reproducibility gaps
+3. Resolve material review blockers in a compact question round.
+   - group only the unresolved cost, selection-history, benchmark, capacity, or reproducibility details that can change the decision
 4. Establish the selection history before judging any evidence.
    - how many candidates, variants, quick looks, and hyperparameter settings preceded this result
    - for mined families, demand the family metadata: family id, counts, selection rule, holdout status
@@ -55,6 +55,7 @@ Do not recommend productionization from a single pretty backtest or a loosely do
 11. Transition.
     - Only after a promote decision should the next default skill be superquants-productionization; once deployed, recurring superquants-live-review sessions take over.
     - If the issue is a bug or accounting mismatch, switch to superquants-strategy-debugging.
+    - Use superquants-result-reporting when the user-facing closeout needs selected robustness visuals or an artifact index; do not reproduce every available module.
 
 ## Review Rules
 

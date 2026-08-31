@@ -20,9 +20,11 @@ PACKAGES = REPO / 'packages'
 
 VALIDATOR_TEMPLATE_PAIRS = {
     'superquants-brainstorms/scripts/validate_research_spec.py': 'superquants-brainstorms/assets/templates/research-spec-template.md',
+    'superquants-brainstorms/scripts/validate_research_brief.py': 'superquants-brainstorms/assets/templates/research-brief-template.md',
     'superquants-data-prepare/scripts/validate_data_audit.py': 'superquants-data-prepare/assets/templates/data-audit-template.md',
     'superquants-experiment-planning/scripts/validate_experiment_plan.py': 'superquants-experiment-planning/assets/templates/experiment-plan-template.md',
     'superquants-experiment-planning/scripts/validate_experiment_log.py': 'superquants-experiment-planning/assets/templates/experiment-log-template.md',
+    'superquants-result-reporting/scripts/validate_quant_result_report.py': 'superquants-result-reporting/assets/templates/quant-result-report-template.md',
     'superquants-strategy-debugging/scripts/validate_diagnosis_memo.py': 'superquants-strategy-debugging/assets/templates/diagnosis-memo-template.md',
     'superquants-robustness-review/scripts/validate_review_memo.py': 'superquants-robustness-review/assets/templates/review-memo-template.md',
     'superquants-productionization/scripts/validate_production_handoff.py': 'superquants-productionization/assets/templates/production-handoff-template.md',

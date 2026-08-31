@@ -7,22 +7,22 @@ description: use when a promoted quantitative strategy is running in shadow or l
 
 Use this skill once a strategy is deployed in shadow or live and the question becomes whether reality matches the research. At the start of a qualifying task, say you are using the Superquants Live Review skill.
 
-Read the research spec, review memo, production handoff, prior live reviews, calibration ledger, and live performance records before judging anything. If live records are incomplete, ask one question per message until the reconciliation inputs are pinned down.
+Read the research design, review memo, production handoff, prior live reviews, calibration ledger, and live performance records before judging anything. If live records are incomplete, ask only decision-changing questions. Use the environment's native structured-question tool when available and group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker that prevents reconciliation. Do not conduct a serial survey.
 
 Do not conclude alpha decay, resize, or retire from a raw pnl chart. Reconcile first, attribute second, decide third. And do not let a strategy run indefinitely without a scheduled review: unmeasured live performance is unfinished research.
 
 ## Checklist
 
 1. Read the strategy packet.
-   - research spec: expected economics, decay expectations, promotion criteria
+   - research brief or spec: expected economics, decay expectations, promotion criteria
    - review memo: promotion rationale and initial sizing
    - production handoff: frozen assumptions and pre-committed statistical decay triggers
    - prior live reviews and `research/superquants/calibration-ledger.md`
    - live records: returns, positions, fills, costs, exposures, incidents
 2. Restate the expectation in one sentence.
    - What did the research promise, net of costs, at what sizing?
-3. Ask clarifying questions one at a time.
-   - resolve live data completeness, config drift, cost and fill records, and the review window
+3. Resolve reconciliation blockers in a compact question round.
+   - group only unresolved live-data, config-drift, cost, fill, or review-window details that can alter attribution
 4. Reconcile live against research.
    - run or request a same-period simulation under the frozen research assumptions
    - compare net returns, turnover, exposures, costs, and hit patterns on the same calendar and the same conventions
@@ -49,6 +49,7 @@ Do not conclude alpha decay, resize, or retire from a raw pnl chart. Reconcile f
     - resize: record the new size and its rationale
     - re-fit or modify: any change to expected economics is new research; route through superquants-experiment-planning and re-review before redeploying
     - retire: write a post-mortem with `scripts/new_post_mortem.py`, record the cause of death and revival conditions in `research/superquants/archive/INDEX.md`, and feed the lessons into future triage and brainstorm priors
+    - use superquants-result-reporting to select only the live-versus-backtest or divergence modules needed for the user-facing closeout
 
 ## Live Review Rules
 

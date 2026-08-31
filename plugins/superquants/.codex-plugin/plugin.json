@@ -1,6 +1,6 @@
 {
   "name": "superquants",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "description": "Superquants multi-skill suite for closed-loop quant research workflows.",
   "author": {
     "name": "nnquant",
@@ -19,8 +19,8 @@
   "apps": "./.app.json",
   "interface": {
     "displayName": "Superquants Skill Suite",
-    "shortDescription": "Eight connected skills for closed-loop quant research and productionization.",
-    "longDescription": "A repo-local plugin that packages the Superquants workflow into eight composable skills covering idea triage, ideation, data preparation, experiment planning, debugging, robustness review, production handoff, and live review - with a trial registry for multiplicity accounting and a calibration ledger that feeds live results back into the research process.",
+    "shortDescription": "Nine connected skills for scoped quant research and modular result reporting.",
+    "longDescription": "A repo-local plugin that packages the Superquants workflow into nine composable skills covering idea triage, compact or full research design, data preparation, experiment planning, modular result reporting, debugging, robustness review, production handoff, and live review - with a trial registry for multiplicity accounting and a calibration ledger that feeds live results back into the research process.",
     "developerName": "nnquant",
     "category": "Productivity",
     "capabilities": [

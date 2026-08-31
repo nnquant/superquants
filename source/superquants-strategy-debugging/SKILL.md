@@ -7,7 +7,7 @@ description: use when a backtest looks wrong, a live strategy diverges from rese
 
 Use this skill when the problem is not "build the strategy" but "find why it is wrong". At the start of a qualifying task, say you are using the Superquants Strategy Debugging skill.
 
-Read the latest research spec, data audit, experiment plan, experiment logs, plots, and relevant code before proposing fixes. If the failure surface is ambiguous, ask one question per message until the symptom is concrete enough to reproduce.
+Read the latest research design, data audit, experiment plan, experiment logs, plots, and relevant code before proposing fixes. If the failure surface is ambiguous, ask only decision-changing questions. Use the environment's native structured-question tool when available and group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker needed to reproduce the symptom. Do not conduct a serial survey.
 
 Do not rewrite the whole stack, rerun giant backtests, or hand-wave the bug away. Localize the smallest failing slice first.
 
@@ -19,8 +19,8 @@ Do not rewrite the whole stack, rerun giant backtests, or hand-wave the bug away
    - what happened
    - what was expected
    - where it was first observed
-3. Ask clarifying questions one at a time.
-   - resolve environment, data version, timing, and reproduction uncertainty
+3. Resolve reproduction blockers in a compact question round.
+   - group only the unresolved environment, data-version, timing, or reproduction details that change the minimal failing slice
 4. Freeze a minimal failing slice.
    - smallest date range, instrument set, and config that still reproduces the issue
 5. Diagnose in this order.

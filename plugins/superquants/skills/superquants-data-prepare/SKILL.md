@@ -1,13 +1,13 @@
 ---
 name: superquants-data-prepare
-description: use after a quantitative research spec exists and before trusting datasets, feature tables, labels, or backtests. audits point-in-time correctness, universe formation, timestamps, joins, transforms, leakage, and operational assumptions through targeted dialogue and a written data audit; blocks experimentation until the audit passes or risks are explicitly accepted.
+description: use after an approved quantitative research brief or spec exists and before trusting datasets, feature tables, labels, or backtests. audits point-in-time correctness, universe formation, timestamps, joins, transforms, leakage, and operational assumptions through targeted dialogue and a written data audit; blocks experimentation until the audit passes or risks are explicitly accepted.
 ---
 
 # Superquants Data Prepare
 
-Use this skill after a research spec exists and before serious experimentation. At the start of a qualifying task, say you are using the Superquants Data Prepare skill.
+Use this skill after an approved research brief or spec exists and before serious experimentation. At the start of a qualifying task, say you are using the Superquants Data Prepare skill.
 
-Read the current research spec, existing data docs, sample rows, and any prior data audit before proposing feature engineering or backtests. If critical assumptions are missing, ask one question per message until the missing pieces are pinned down.
+Read the current research design, existing data docs, sample rows, and any prior data audit before proposing feature engineering or backtests. If critical assumptions are missing, ask only decision-changing questions. Use the environment's native structured-question tool when available and group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker that cannot be safely inferred. Do not conduct a serial survey.
 
 Do not engineer features, fit models, run a full backtest, or interpret strategy metrics until the data audit is marked pass or conditionally pass with the risks made explicit.
 
@@ -15,12 +15,12 @@ Quick looks run under superquants-triage may precede a full audit, but their out
 
 ## Checklist
 
-1. Read the approved research spec first.
+1. Read the approved research brief or spec first.
    - Reconstruct the decision time, forecast horizon, benchmark, and operational constraints.
 2. Inspect the current data state.
    - Raw sources, vendor snapshots, data contracts, sample rows, joins, and transforms.
-3. Ask clarifying questions one at a time.
-   - Resolve missing details around timestamps, universe membership, splits, rolls, borrow, latency, and imputation.
+3. Resolve material blockers in a compact question round.
+   - Group only the missing details that can change timestamps, universe membership, splits, rolls, borrow, latency, or imputation.
 4. Build a dataset inventory.
    - Separate raw inputs, derived features, labels, and execution or market data.
 5. Audit point-in-time correctness.

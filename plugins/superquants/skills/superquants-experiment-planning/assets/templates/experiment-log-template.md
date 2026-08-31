@@ -29,7 +29,7 @@ How does the signal become positions or orders?
 List fees, slippage, borrow, financing, limits, and assumptions.
 
 ## Results
-Report the key metrics and notable plots.
+Report the key metrics and use only the result modules that answer this experiment. Link the selected plots and machine-readable artifacts; do not generate every available template by default.
 
 ## Interpretation
 What changed in predictive power, tradability, or risk?

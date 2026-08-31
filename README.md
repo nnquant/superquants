@@ -1,6 +1,6 @@
 # Superquants Multi-Skill Suite
 
-This bundle splits Superquants into eight composable skills, inspired by the workflow style of obra/superpowers, forming a closed-loop quant research process: ideas are screened, specified, audited, tested, challenged, productionized, and then measured live - with live results calibrating the next round of research.
+This bundle splits Superquants into nine composable skills, inspired by the workflow style of obra/superpowers, forming a closed-loop quant research process: ideas are screened, specified at an appropriate depth, audited, tested, reported with selected evidence, challenged, productionized, and then measured live - with live results calibrating the next round of research.
 
 ## Skill Order
 
@@ -8,24 +8,27 @@ This bundle splits Superquants into eight composable skills, inspired by the wor
    - use to screen raw ideas or mined candidate batches cheaply, under quarantine rules
    - output: trial registry entries and triage notes; verdict drop or graduate
 1. superquants-brainstorms
-   - use before any new strategy research or factor ideation
-   - output: research spec, with power budget, promotion criteria, and kill criteria pre-committed
+   - use for material new strategy research or factor ideation after routing direct answers and quick checks to lighter modes
+   - output: a compact research brief or full research spec, sized to ambiguity and consequence
 2. superquants-data-prepare
-   - use after the research spec and before trusting data
+   - use after the approved research brief or spec and before trusting data
    - output: data audit
 3. superquants-experiment-planning
-   - use after spec and data audit exist
+   - use after an approved research design and data audit exist
    - output: experiment plan (starting at experiment zero, the power check) and experiment logs with selection history
-4. superquants-strategy-debugging
+4. superquants-result-reporting
+   - use when presenting experiment, factor, backtest, diagnostic, robustness, or live results
+   - output: an inline closeout or a reusable report assembled from only the relevant evidence modules; no full chart pack is required by default
+5. superquants-strategy-debugging
    - use when results look wrong or live diverges from research
    - output: diagnosis memo
-5. superquants-robustness-review
+6. superquants-robustness-review
    - use when the strategy looks promising and needs challenge before promotion
    - output: review memo (with null story, pre-mortem, portfolio fit) and robustness matrix; promote, iterate against a budget, or archive
-6. superquants-productionization
+7. superquants-productionization
    - use only after review recommends promotion
    - output: production handoff with pre-committed statistical decay triggers, and runbook
-7. superquants-live-review
+8. superquants-live-review
    - use on a recurring basis once a strategy runs in shadow or live
    - output: live review memos, calibration ledger updates, and post-mortems on retirement
 
@@ -36,6 +39,7 @@ This bundle splits Superquants into eight composable skills, inspired by the wor
 - `research/superquants/data-audits/`
 - `research/superquants/plans/`
 - `research/superquants/experiments/`
+- `research/superquants/reports/`
 - `research/superquants/diagnoses/`
 - `research/superquants/reviews/`
 - `research/superquants/production/`
@@ -46,9 +50,10 @@ This bundle splits Superquants into eight composable skills, inspired by the wor
 
 ## Design Principles
 
-- clarify the strategy details before doing work
-- ask one question per message when important assumptions are missing
+- use the lightest research mode that protects the decision: direct answer, quick check, compact design, or full design
+- infer from project evidence first; when questions remain, use the available native structured-question tool (for example Codex `request_user_input`) to group up to three decision-changing items, otherwise ask only the blocker that cannot be safely inferred
 - write the artifact before claiming progress
+- select result-report modules by the claim and decision; templates are reusable options, not a requirement to emit every chart or table
 - keep predictive evidence, portfolio mapping, execution, and operations separate
 - block the next phase until the current artifact is approved or passes validation
 - every look counts: quick looks, mined candidates, and hyperparameter settings enter the trial registry, and reviews judge the family, not the lucky member
