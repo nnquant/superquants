@@ -10,7 +10,7 @@
       "name": "superquants",
       "description": "Nine connected skills for appropriately scoped quant research, modular result reporting, robustness review, productionization, and live review.",
       "source": "./plugins/superquants",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "category": "productivity"
     }
   ]

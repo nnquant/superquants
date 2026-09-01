@@ -22,9 +22,11 @@ For compact and full designs, do not invoke superquants-data-prepare, superquant
 
 - Infer answers from the project and prior artifacts before asking.
 - Ask only questions whose answers would materially change the claim, universe, timing, benchmark, cost model, validation, or decision threshold.
-- When the environment provides a native structured-question tool, such as `request_user_input` in Codex or `AskUserQuestion` in Claude, group up to three related questions in one round and include a recommended default when useful.
-- When that tool is unavailable, state reasonable defaults and ask only the single blocker that cannot be safely inferred. Do not conduct a serial survey.
-- A compact design normally gets at most one question round. A full design normally gets at most two unless new evidence creates a genuine blocker.
+- A question is required when two reasonable answers would lead to materially different data, labels, portfolio construction, costs, validation, or promotion decisions and project evidence does not select between them. Do not silently choose a consequential default merely to avoid asking.
+- When the environment provides a native structured-question tool, such as `request_user_input` in Codex or `AskUserQuestion` in Claude, group up to three related questions per interaction and include a recommended option when useful.
+- When that tool is unavailable, ask the same small batch in an ordinary message. Tool availability changes the presentation, not whether a material decision is put to the user.
+- There is no fixed limit on question rounds. After each answer, update what is known, inferred, and still open; continue only while unresolved choices can change the design. Stop when the material choices are resolved or the user explicitly accepts the remaining stated assumptions.
+- Zero question rounds are appropriate for direct answers, frozen quick checks, or compact/full designs whose material choices are already explicit or evidenced. Do not ask merely to fill a template field or reconfirm established facts.
 
 ## Checklist
 
@@ -37,9 +39,11 @@ Complete these items in order:
 2. Assess scope.
    - If the request actually contains multiple unrelated ideas, decompose them before refining details.
    - Each independent strategy idea gets its own appropriately sized design artifact.
-3. Resolve material blockers in a compact question round.
+3. Resolve material decisions in compact question rounds.
    - Follow the Questioning Policy instead of asking every question in the bank.
-   - Record discoverable or safely defaulted details as assumptions for the consolidated review.
+   - Ask up to three related questions at a time, then reassess the design from the answers before asking more.
+   - Continue for as many rounds as the complexity requires; do not present the consolidated design while a consequential choice remains unresolved unless the user explicitly accepts it as an assumption.
+   - Record discoverable or safely defaulted details as assumptions for the consolidated review. If no questions were needed, make the material inferred choices visible there.
 4. Compare research paths only when there is a genuine design choice.
    - If one path is clearly implied by the request and current project, recommend it directly.
    - Otherwise compare 2-3 paths by mechanism, data, failure modes, implementation cost, and fastest falsification.

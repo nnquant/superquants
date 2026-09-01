@@ -51,7 +51,7 @@ This bundle splits Superquants into nine composable skills, inspired by the work
 ## Design Principles
 
 - use the lightest research mode that protects the decision: direct answer, quick check, compact design, or full design
-- infer from project evidence first; when questions remain, use the available native structured-question tool (for example Codex `request_user_input`) to group up to three decision-changing items, otherwise ask only the blocker that cannot be safely inferred
+- infer from project evidence first; in research design, group up to three decision-changing questions per interaction, use the native structured-question tool when available and the same small batch in ordinary messages otherwise, and continue without a fixed round cap until material choices are resolved or explicitly accepted as assumptions
 - write the artifact before claiming progress
 - select result-report modules by the claim and decision; templates are reusable options, not a requirement to emit every chart or table
 - keep predictive evidence, portfolio mapping, execution, and operations separate

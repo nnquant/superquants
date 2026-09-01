@@ -1,6 +1,6 @@
 # Question Bank
 
-Use these questions selectively after inspecting the project. Ask only what would materially change the research design. When a native structured-question tool is available, group up to three related questions in one round; otherwise state reasonable defaults and ask only the blocker that cannot be safely inferred. Never turn this bank into a serial survey.
+Use these questions selectively after inspecting the project. Ask only what would materially change the research design. Group up to three related questions per interaction; use a native structured-question tool when available and the same small batch in an ordinary message otherwise. Continue for as many rounds as unresolved consequential choices require, reassessing after every answer. Stop when the design-changing uncertainty is resolved or the user explicitly accepts the remaining stated assumptions. Never turn this bank into a template-completion survey.
 
 ## Intent And Decision
 
