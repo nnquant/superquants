@@ -9,6 +9,9 @@ What decision should this plan enable?
 ## Current Context
 What is already known from the spec, audit, and prior logs?
 
+## Prior Learning Incorporated
+Which earlier experiment outcomes or failures change this plan, and how does this plan avoid repeating them unchanged? State "first experiment" when none exist.
+
 ## Experiments
 
 ### Experiment 0 - Power and Falsifiability Check

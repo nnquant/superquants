@@ -15,10 +15,10 @@ This bundle splits Superquants into nine composable skills, inspired by the work
    - output: data audit
 3. superquants-experiment-planning
    - use after an approved research design and data audit exist
-   - output: experiment plan (starting at experiment zero, the power check) and experiment logs with selection history
+   - output: experiment plan (starting at experiment zero, the power check) and experiment logs with selection history, outcome classification, prediction review, failure learning, and a separate justified follow-up decision
 4. superquants-result-reporting
    - use when presenting experiment, factor, backtest, diagnostic, robustness, or live results
-   - output: an inline closeout or a reusable report assembled from only the relevant evidence modules; no full chart pack is required by default
+   - output: an inline closeout or reusable report assembled from only the relevant evidence modules; non-pass outcomes add failure learning, while no full chart pack is required by default
 5. superquants-strategy-debugging
    - use when results look wrong or live diverges from research
    - output: diagnosis memo
@@ -54,6 +54,7 @@ This bundle splits Superquants into nine composable skills, inspired by the work
 - infer from project evidence first; in research design, group up to three decision-changing questions per interaction, use the native structured-question tool when available and the same small batch in ordinary messages otherwise, and continue without a fixed round cap until material choices are resolved or explicitly accepted as assumptions
 - write the artifact before claiming progress
 - select result-report modules by the claim and decision; templates are reusable options, not a requirement to emit every chart or table
+- an experiment may legitimately end in `fail`; do not end its closeout at that one word: classify validity, compare prediction with observation, localize the failure, state what was learned, and separately choose iterate, debug, gather evidence, or archive with no further experiment
 - keep predictive evidence, portfolio mapping, execution, and operations separate
 - block the next phase until the current artifact is approved or passes validation
 - every look counts: quick looks, mined candidates, and hyperparameter settings enter the trial registry, and reviews judge the family, not the lucky member

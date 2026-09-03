@@ -10,6 +10,7 @@ import re
 REQUIRED_HEADINGS = [
     'goal',
     'current context',
+    'prior learning incorporated',
     'experiments',
     'verification strategy',
     'stop conditions',

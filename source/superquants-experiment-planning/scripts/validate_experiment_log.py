@@ -17,7 +17,11 @@ REQUIRED_HEADINGS = [
     'portfolio and execution mapping',
     'costs and constraints',
     'results',
+    'outcome classification',
+    'follow up decision',
+    'prediction review',
     'interpretation',
+    'failure analysis and learning',
     'next step',
     'reproducibility',
 ]

@@ -16,6 +16,7 @@ MODULE_TEMPLATES = {
     'robustness': 'module-robustness-template.md',
     'live': 'module-live-template.md',
     'diagnostic': 'module-diagnostic-template.md',
+    'learning': 'module-learning-template.md',
 }
 
 

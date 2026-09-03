@@ -1,6 +1,6 @@
 ---
 name: superquants-result-reporting
-description: use when presenting quantitative research, factor, backtest, robustness, diagnostic, or live-review results. builds a decision-facing report from reusable modules, selecting only the metrics, charts, tables, and artifact links that are relevant to the current result instead of requiring a full chart pack every time.
+description: use when presenting quantitative research, factor, backtest, robustness, diagnostic, or live-review results. selects only relevant metrics, charts, tables, and links, and pairs non-pass outcomes with causal evidence, learning, and a justified follow-up decision instead of treating the outcome label as the whole closeout.
 ---
 
 # Superquants Result Reporting
@@ -29,8 +29,25 @@ Read `references/result-modules.md` and choose only the modules that answer the 
 - robustness
 - live versus backtest
 - diagnostic
+- failure learning
 
 A portfolio-return claim normally needs a NAV or cumulative-return view and drawdown context. A factor-predictiveness claim may be better served by IC and bucket evidence without a strategy NAV. A one-day diagnostic may need no performance chart. The user's explicit requested format takes priority.
+
+Any non-pass result or material surprise requires the failure-learning module in addition to whatever evidence module supports the underlying claim. Inline reporting may present the same content compactly without creating a report file.
+
+## Failure Learning
+
+`Fail` may be the honest, final conclusion for the experiment. Before closeout, complete the feedback process:
+
+- classify the experiment result as pass, fail (valid negative), invalid experiment, or inconclusive against the frozen criterion
+- record the follow-up decision separately as promote, archive, debug, iterate, or gather evidence
+- compare the pre-run prediction with the observed result
+- localize the earliest divergence across statistical design, data, signal, portfolio, execution, evaluation, or operations
+- distinguish what was falsified from what remains untested, and give evidence and confidence for the leading cause
+- identify the specific assumption, test, or gate that should improve
+- state the justified follow-up: either the smallest next action with expected information gain and a stop condition, or archive with no further experiment
+
+Use already available logs, artifacts, and safe diagnostic slices proactively. This reporting skill does not authorize a new configuration, parameter search, wider dataset, or expensive rerun; those are new experiments and must be planned and counted. Route broken invariants or suspicious metrics to superquants-strategy-debugging. Do not relabel a valid fail as invalid or inconclusive. A fail that hits the pre-committed kill criterion should be archived rather than tuned, and no continuation is required.
 
 ## Chart Style
 
@@ -49,11 +66,14 @@ When newly rendering selected charts, preserve the active project's established 
    - delete unused optional prompts and keep Chinese or domain-specific naming when it matches the project
 5. Reconcile the evidence.
    - headline numbers must match machine-readable outputs and use the same window, benchmark, and cost convention
-6. Present the result.
+6. Close the learning loop for non-pass or surprising outcomes.
+   - add the failure-learning module, identify why the result missed, what was learned, and the smallest justified next decision
+   - never substitute generic suggestions for evidence about the actual failing layer
+7. Present the result.
    - lead with the plain-language decision
    - show or link the selected charts and exact artifact paths
    - state material missing evidence instead of filling the gap with prose
-7. Validate substantial report artifacts with `scripts/validate_quant_result_report.py`.
+8. Validate substantial report artifacts with `scripts/validate_quant_result_report.py`.
 
 ## Questioning Policy
 
@@ -86,3 +106,4 @@ The contents inside selected evidence are modular. There is no requirement to re
 - `assets/templates/module-robustness-template.md`: OOS, cost, parameter, regime, concentration, and reproducibility options
 - `assets/templates/module-live-template.md`: same-period live-versus-backtest and decay-trigger options
 - `assets/templates/module-diagnostic-template.md`: expected-versus-actual and minimal-failing-slice options
+- `assets/templates/module-learning-template.md`: non-pass classification, failure analysis, process learning, and smallest next-action options

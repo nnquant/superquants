@@ -67,6 +67,20 @@ Use when the decision is about correctness rather than performance. Select from:
 - layer-by-layer evidence across data, signal, portfolio, execution, and reporting
 - before-and-after verification when a fix is in scope
 
+## Failure Learning
+
+Use for every non-pass result or material surprise, alongside the relevant domain module. Select from:
+
+- experiment result: pass, fail (valid negative), invalid experiment, or inconclusive against the pre-committed criterion
+- separate follow-up decision: promote, archive, debug, iterate, or gather evidence
+- pre-run prediction versus observed result
+- earliest failing layer and evidence for the leading cause versus alternatives
+- scope of falsification: mechanism, configuration, mapping, regime, or implementation
+- reusable lesson and the specific research-process gate or test to update
+- justified follow-up: the smallest next action with expected information gain, stop condition, and selection-history consequence, or archive with no further experiment
+
+`Fail` may be a legitimate final experiment conclusion, but the label alone is not a complete closeout. Do not treat an invalid experiment as negative alpha evidence, relabel a valid fail to soften it, or use failure analysis as permission for unplanned tuning.
+
 ## Artifact Rules
 
 - Prefer existing project formats and paths over inventing a parallel output tree.
